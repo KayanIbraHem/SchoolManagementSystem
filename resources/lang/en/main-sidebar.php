@@ -3,6 +3,8 @@
 return [
 
     'Dashboard'=>'Dashboard',
-    'Components'=>'Components'
+    'Components'=>'Components',
+    'SchoolGrades'=>'SchoolGrades',
+    'GradesList'=>'Grades List'
 
 ];

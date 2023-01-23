@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Grades\GradeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,8 @@ Route::group([
     ], function(){
 
         Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+        Route::resource('grades',GradeController::class);
 
 
     });

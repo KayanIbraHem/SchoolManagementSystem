@@ -14,7 +14,9 @@
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^4.2",
-        "mcamara/laravel-localization": "^1.7"
+        "mcamara/laravel-localization": "^1.7",
+        "spatie/laravel-translatable": "^6.3",
+        "yoeunes/toastr": "^2.3"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
