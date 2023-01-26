@@ -3,8 +3,20 @@
 return [
 
     'Dashboard'=>'Dashboard',
-    'Components'=>'Components',
+    'Components'=>'School Management System',
     'SchoolGrades'=>'SchoolGrades',
-    'GradesList'=>'Grades List'
+    'GradesList'=>'Grades List',
+    'classes'=>'Classes',
+    'sections'=>'Sections',
+    'students'=>'Students',
+    'teachers'=>'Teachers',
+    'parents'=>'Parents',
+    'accounts'=>'Accounts',
+    'attendance'=>'Attendance',
+    'exams'=>'Exams',
+    'library'=>'Library',
+    'onlineclasses'=>'Online Classes',
+    'settings'=>'Settings',
+    'users'=>'Users',
 
 ];

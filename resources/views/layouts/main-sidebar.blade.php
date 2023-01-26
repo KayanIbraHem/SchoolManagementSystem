@@ -6,22 +6,19 @@
                 <ul class="nav navbar-nav side-menu" id="sidebarnav">
                     <!-- menu item Dashboard-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
+                        <a href="{{route('home')}}">
                             <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main-sidebar.Dashboard')}}</span>
                             </div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            {{-- <div class="pull-right"><i class="ti-plus"></i></div> --}}
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="dashboard" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('home')}}">{{trans('main-sidebar.Dashboard')}}</a> </li>
-                        </ul>
                     </li>
                     <!-- menu title -->
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{{trans('main-sidebar.Components')}}</li>
-                    <!-- menu item Elements-->
+                    <!--SchoolStages-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
-                            <div class="pull-left"><i class="ti-palette"></i><span
+                            <div class="pull-left"><i class="ti-home"></i><span
                                     class="right-nav-text">{{trans('main-sidebar.SchoolGrades')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -30,11 +27,11 @@
                             <li><a href="{{route('grades.index')}}">{{trans('main-sidebar.GradesList')}}</a></li>
                         </ul>
                     </li>
-                    <!-- menu item calendar-->
+                    <!--classes-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu">
-                            <div class="pull-left"><i class="ti-calendar"></i><span
-                                    class="right-nav-text">calendar</span></div>
+                            <div class="pull-left"><i class="fa fa-building"></i><span
+                                    class="right-nav-text">{{trans('main-sidebar.classes')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -43,26 +40,11 @@
                             <li> <a href="calendar-list.html">List Calendar</a> </li>
                         </ul>
                     </li>
-                    <!-- menu item todo-->
-                    <li>
-                        <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Todo
-                                list</span> </a>
-                    </li>
-                    <!-- menu item chat-->
-                    <li>
-                        <a href="chat-page.html"><i class="ti-comments"></i><span class="right-nav-text">Chat
-                            </span></a>
-                    </li>
-                    <!-- menu item mailbox-->
-                    <li>
-                        <a href="mail-box.html"><i class="ti-email"></i><span class="right-nav-text">Mail
-                                box</span> <span class="badge badge-pill badge-warning float-right mt-1">HOT</span> </a>
-                    </li>
-                    <!-- menu item Charts-->
+                    <!--sections-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart">
                             <div class="pull-left"><i class="ti-pie-chart"></i><span
-                                    class="right-nav-text">Charts</span></div>
+                                    class="right-nav-text">{{trans('main-sidebar.sections')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -73,11 +55,10 @@
                         </ul>
                     </li>
 
-                    <!-- menu font icon-->
+                    <!--students-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#font-icon">
-                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">font
-                                    icon</span></div>
+                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main-sidebar.students')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -87,18 +68,10 @@
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
                     </li>
-                    <!-- menu title -->
-                    <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Widgets, Forms & Tables </li>
-                    <!-- menu item Widgets-->
-                    <li>
-                        <a href="widgets.html"><i class="ti-blackboard"></i><span class="right-nav-text">Widgets</span>
-                            <span class="badge badge-pill badge-danger float-right mt-1">59</span> </a>
-                    </li>
-                    <!-- menu item Form-->
+                    <!--teachers-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Form">
-                            <div class="pull-left"><i class="ti-files"></i><span class="right-nav-text">Form &
-                                    Editor</span></div>
+                            <div class="pull-left"><i class="ti-files"></i><span class="right-nav-text">{{trans('main-sidebar.teachers')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -113,11 +86,10 @@
                             <li> <a href="toastr.html">toastr</a> </li>
                         </ul>
                     </li>
-                    <!-- menu item table -->
+                    <!--parents-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#table">
-                            <div class="pull-left"><i class="ti-layout-tab-window"></i><span class="right-nav-text">data
-                                    table</span></div>
+                            <div class="pull-left"><i class="ti-layout-tab-window"></i><span class="right-nav-text">{{trans('main-sidebar.parents')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -127,12 +99,10 @@
                             <li> <a href="data-table.html">Data table</a> </li>
                         </ul>
                     </li>
-                    <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">More Pages</li>
-                    <!-- menu item Custom pages-->
+                    <!--accounts-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#custom-page">
-                            <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">Custom
-                                    pages</span></div>
+                            <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">{{trans('main-sidebar.accounts')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -150,11 +120,11 @@
                             <li> <a href="faqs.html">faqs</a> </li>
                         </ul>
                     </li>
-                    <!-- menu item Authentication-->
+                    <!--attendance-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
                             <div class="pull-left"><i class="ti-id-badge"></i><span
-                                    class="right-nav-text">Authentication</span></div>
+                                    class="right-nav-text">{{trans('main-sidebar.attendance')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -163,16 +133,6 @@
                             <li> <a href="register.html">register</a> </li>
                             <li> <a href="lockscreen.html">Lock screen</a> </li>
                         </ul>
-                    </li>
-                    <!-- menu item maps-->
-                    <li>
-                        <a href="maps.html"><i class="ti-location-pin"></i><span class="right-nav-text">maps</span>
-                            <span class="badge badge-pill badge-success float-right mt-1">06</span></a>
-                    </li>
-                    <!-- menu item timeline-->
-                    <li>
-                        <a href="timeline.html"><i class="ti-panel"></i><span class="right-nav-text">timeline</span>
-                        </a>
                     </li>
                     <!-- menu item Multi level-->
                     <li>

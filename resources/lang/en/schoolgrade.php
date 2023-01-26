@@ -22,6 +22,8 @@ return [
     'name_en_req'=>'English name is required!',
     'name_min'=>'The number of characters must be at least 4 characters!',
     'description_req'=>'Notes is required!',
+    'deletemsg'=>'You are now deleting',
+    'deletegrade'=>'Delete Grade',
 
 
 ];
