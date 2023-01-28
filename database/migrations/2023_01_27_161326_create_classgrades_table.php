@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('grades', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('classgrades', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            $table->string('description')->nullable();
+            $table->foreignId('grade_id')->constrained()->onUpdate('cascade') ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grades');
+        Schema::dropIfExists('classgrades');
     }
 };

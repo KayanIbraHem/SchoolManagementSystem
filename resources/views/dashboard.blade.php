@@ -11,15 +11,15 @@
     @include('layouts.head')
 </head>
 
-<body>
+<body style="font-family: 'Cairo', sans-serif">
 
-    <div class="wrapper">
+    <div class="wrapper" style="font-family: 'Cairo', sans-serif">
 
         <!--=================================
  preloader -->
 
         <div id="pre-loader">
-            <img src="assets/images/pre-loader/loader-01.svg" alt="">
+            <img src="{{ URL::asset('assets/images/pre-loader/loader-01.svg') }}" alt="">
         </div>
 
         <!--=================================

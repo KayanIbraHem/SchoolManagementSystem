@@ -24,8 +24,8 @@ class GradeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_ar'=>'required|min:4',
-            'name_en'=>'required|min:4',
+            'name_ar'=>'required|min:4|unique:grades,name->ar,'.$this->id,
+            'name_en'=>'required|min:4|min:4|unique:grades,name->ar,'.$this->id,
             'description'=>'required|min:4',
         ];
     }
@@ -34,11 +34,11 @@ class GradeRequest extends FormRequest
         return[
             'name_ar.required'=>trans('schoolgrade.name_ar_req'),
             'name_ar.min'=>trans('schoolgrade.min'),
-            // 'name_ar.unique'=>trans('schoolgrade.name_uni'),
+            'name_ar.unique'=>trans('schoolgrade.name_uni'),
 
             'name_en.required'=>trans('schoolgrade.name_en_req'),
             'name_en.min'=>trans('schoolgrade.min'),
-            // 'name_en.unique'=>trans('schoolgrade.name_uni'),
+            'name_en.unique'=>trans('schoolgrade.name_uni'),
 
             'description.required'=>trans('schoolgrade.description_req'),
             'description.min'=>trans('schoolgrade.min')

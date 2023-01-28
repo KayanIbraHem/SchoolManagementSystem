@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\Classgrade\ClassgradeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,23 +16,23 @@ use App\Http\Controllers\Grades\GradeController;
 Auth::routes();
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', function()
-    {
-    return view('auth.login');
+        Route::get('/', function(){
+            return view('auth.login');
+        });
     });
-});
 
 Route::group([
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
-    ], function(){
+        ], function(){
 
-        Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/dashboard', [App\Http\Controllers\HomeController::class    , 'index'])->name('home');
 
         Route::resource('grades',GradeController::class);
 
+        Route::resource('classes',ClassgradeController::class);
 
-    });
+        });
 
 
 

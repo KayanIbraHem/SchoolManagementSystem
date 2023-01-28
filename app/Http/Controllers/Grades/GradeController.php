@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Grades;
 
-use App\Http\Controllers\Controller;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use App\Http\Requests\GradeRequest;
+use App\Http\Controllers\Controller;
+
 class GradeController extends Controller
 {
 
@@ -15,15 +16,12 @@ class GradeController extends Controller
         return view('grades.grades',['grades'=>$grades]);
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-
     public function store(GradeRequest $request)
     {
+        // if(Grade::where('name->ar',$request->name_ar)->orwhere('name->en',$request->name_en)->exists())
+        // {
+        //         return redirect()->back()->withErrors('خطأ');
+        // }
         $grade=new Grade();
         $grade->name=[
             'ar'=>$request->name_ar,
@@ -35,17 +33,6 @@ class GradeController extends Controller
         return redirect()->route('grades.index');
     }
 
-    public function show(Grade $grade)
-    {
-        //
-    }
-
-    public function edit(Grade $grade)
-    {
-        //
-    }
-
-
     public function update(GradeRequest $request)
     {
         $grade =Grade::find($request->id);
@@ -56,7 +43,6 @@ class GradeController extends Controller
         toastr()->success(trans('messages.edit'));
         return redirect()->route('grades.index');
     }
-
 
     public function destroy(Request $request)
     {

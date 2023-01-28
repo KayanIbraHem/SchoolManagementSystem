@@ -6,7 +6,7 @@ return [
     'Components'=>'نظام ادارة المدارس',
     'SchoolGrades'=>'المراحل الدراسية',
     'GradesList'=>'قائمة المراحل الدراسية',
-    'classes'=>'الفصول',
+    'classes'=>'الصفوف',
     'sections'=>'الأقسام',
     'students'=>'الطلاب',
     'teachers'=>'المعلمين',
@@ -18,6 +18,7 @@ return [
     'onlineclasses'=>'حصص اونلاين',
     'settings'=>'الاعدادات',
     'users'=>'المستخدمين',
+    'classeslist'=>'قائمة الصفوف الدراسية',
 
 
 ];

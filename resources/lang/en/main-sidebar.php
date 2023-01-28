@@ -18,5 +18,6 @@ return [
     'onlineclasses'=>'Online Classes',
     'settings'=>'Settings',
     'users'=>'Users',
+    'classeslist'=>'Classes List',
 
 ];
