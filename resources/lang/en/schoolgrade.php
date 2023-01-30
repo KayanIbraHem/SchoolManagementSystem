@@ -24,6 +24,7 @@ return [
     'description_req'=>'Notes is required!',
     'deletemsg'=>'You are now deleting',
     'deletegrade'=>'Delete Grade',
+    'delete_error'=>'Grade Cannot be Deleted, Make Sure There Are No Classes First!'
 
 
 ];

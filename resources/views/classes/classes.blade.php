@@ -43,6 +43,9 @@
                         <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
                             {{trans('classes.add_class')}}
                         </button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChecked" id="btnDeleteChecked" >
+                            {{trans('classes.btn_delete_checked')}}
+                        </button>
                         <br><br>
                         <div class="card card-statistics h-100">
                             <div class="card-body">
@@ -51,6 +54,7 @@
                                     style="text-align: center">
                                     <thead>
                                         <tr>
+                                            <th><input name="select_all" id="example-select-all" type="checkbox" onclick="CheckAll('box', this)" /></th>
                                             <th>#</th>
                                             <th>{{trans('classes.class_name')}}</th>
                                             <th>{{trans('classes.grade_name')}}</th>
@@ -60,6 +64,7 @@
                                     <tbody>
                                     @foreach ($classes as $class )
                                         <tr>
+                                            <td><input name="select_one" type="checkbox"  value="{{$class->id}}" class="box" ></td>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$class->name}}</td>
                                             <td>{{$class->grade->name}}</td>
@@ -199,9 +204,9 @@
                                 :</label>
                             <select class="form-control form-control-lg"
                                     id="grade_id" name="grade_id">
-                                <option value="{{$class->grade->id}}">
-                                    {{$class->grade->name}}
-                                </option>
+                                    {{-- <option value="{{$class->grade->id}}">
+                                        {{$class->grade->name}}
+                                    </option> --}}
                                 @foreach ($grades as $grade)
                                     <option value="{{$grade->id}}">
                                         {{$grade->name}}
@@ -221,7 +226,6 @@
             </div>
         </div>
     </div>
-
     <!--END EDIT -->
 
     <!-- DELETE -->
@@ -252,8 +256,39 @@
     </div>
     <!--END DELETE -->
 
-</div>
+    <!--DELETE CHECKED-->
+    <div class="modal fade" id="deleteChecked" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
+                    {{trans('classes.modaltitle_delete_checked')}}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
+            <form action="{{route('deleteall')}}" method="POST">
+                @csrf
+                @method('post')
+                <div class="modal-body">
+                    {{ trans('classes.modalbody_delete_checked') }}
+                    <input class="text" type="hidden" id="deleteCheckedID" name="CheckedID" value="">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{ trans('schoolgrade.close') }}</button>
+                    <button type="submit" class="btn btn-danger">{{ trans('schoolgrade.submit') }}</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <!--END DELETE CHECKED-->
+</div>
 <!-- row closed -->
 @endsection
 @section('js')
@@ -281,6 +316,35 @@
             var id = $(this).data('deleteid');
             $('#iddelete').val(id);
 
+        });
+
+    });
+</script>
+<script type="text/javascript">
+        // <!--CHECKEDBOX-->
+    $(function() {
+        $("#btnDeleteChecked").click(function() {
+            var selected = new Array();
+            $("#datatable input[type=checkbox]:checked").each(function() {
+                selected.push(this.value);
+            });
+            if (selected.length > 0) {
+                $('#deleteChecked').modal('show');
+                $('input[id="deleteCheckedID"]').val(selected);
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        // <!--SHOWBTN-->
+        var $delete = $("#btnDeleteChecked").hide(),
+            $checked = $('input[name="select_all"]').click(function() {
+            $delete.toggle( $checked.is(":checked") );
+        });
+
+        var $delete = $("#btnDeleteChecked").hide(),
+            $checked = $('input[name="select_one"]').click(function() {
+            $delete.toggle( $checked.is(":checked") );
         });
 
     });

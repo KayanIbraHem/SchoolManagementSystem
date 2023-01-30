@@ -21,6 +21,9 @@ return [
     'name_en_req'=>'!اسم الصف بالانجليزية مطلوب!',
     'deletemsg'=>'هل انت متأكد من عملية الحذف؟',
     'deletegrade'=>'حذف المرحلة',
+    'btn_delete_checked'=>'حذف الصفوف المحددة',
+    'modaltitle_delete_checked'=>'حذف مجموعة الصفوف المحددة',
+    'modalbody_delete_checked'=>'هل انت متأكد من عملية حذف مجموعة الصفوف؟',
 
 
 ];

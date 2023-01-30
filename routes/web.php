@@ -29,8 +29,11 @@ Route::group([
         Route::get('/dashboard', [App\Http\Controllers\HomeController::class    , 'index'])->name('home');
 
         Route::resource('grades',GradeController::class);
-
+        //ClassegradeContoller
         Route::resource('classes',ClassgradeController::class);
+        Route::post('deleteAllChecked',[ClassgradeController::class,'deleteCheckedBox'])->name('deleteall');
+        //End ClassegradeContoller
+
 
         });
 

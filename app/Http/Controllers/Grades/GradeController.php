@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Grades;
 
 use App\Models\Grade;
+use App\Models\Classgrade;
 use Illuminate\Http\Request;
 use App\Http\Requests\GradeRequest;
 use App\Http\Controllers\Controller;
@@ -46,8 +47,16 @@ class GradeController extends Controller
 
     public function destroy(Request $request)
     {
-        $grade =Grade::find($request->id)->delete();
-        toastr()->warning(trans('messages.delete'));
-        return back();
+        $check=Classgrade::where('grade_id',$request->id)->pluck('grade_id');
+        if(!$check->count()){
+            $grade =Grade::find($request->id)->delete();
+            toastr()->warning(trans('messages.delete'));
+            return redirect()->back();
+        }
+            toastr()->error(trans('schoolgrade.delete_error'));
+            return redirect()->back();
+
+
     }
+
 }

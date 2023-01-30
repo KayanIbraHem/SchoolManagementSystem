@@ -19,7 +19,6 @@ class ClassgradeController extends Controller
     {
         $grades=Grade::all();
         $classes=Classgrade::all();
-
         return view('classes.classes',['grades'=>$grades,'classes'=>$classes]);
     }
 
@@ -28,10 +27,7 @@ class ClassgradeController extends Controller
         $dataList=$request->data_list;
         foreach($dataList as $data){
             $classes=new Classgrade();
-            $classes->name=[
-                'ar'=>$data['name_ar'],
-                'en'=>$data['name_en']
-            ];
+            $classes->name=['ar'=>$data['name_ar'],'en'=>$data['name_en']];
             $classes->grade_id=$data['grade_id'];
             $classes->save();
         }
@@ -54,6 +50,16 @@ class ClassgradeController extends Controller
     {
         $class =Classgrade::find($request->id)->delete();
         toastr()->warning(trans('messages.delete'));
-        return back();
+        return redirect()->back();
+    }
+
+    public function deleteCheckedBox(Request $request)
+    {
+        $deleteChecked=explode(",",$request->CheckedID);
+        Classgrade::whereIn('id',$deleteChecked)->delete();
+        toastr()->warning(trans('messages.delete'));
+        return redirect()->route('classes.index');
+
+
     }
 }
