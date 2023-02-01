@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\Classgrade\ClassgradeController;
+use App\Http\Controllers\Sections\SectionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,10 +30,16 @@ Route::group([
         Route::get('/dashboard', [App\Http\Controllers\HomeController::class    , 'index'])->name('home');
 
         Route::resource('grades',GradeController::class);
-        //ClassegradeContoller
+        //Classes
         Route::resource('classes',ClassgradeController::class);
-        Route::post('deleteAllChecked',[ClassgradeController::class,'deleteCheckedBox'])->name('deleteall');
-        //End ClassegradeContoller
+        Route::post('delete/all',[ClassgradeController::class,'deleteCheckedBox'])->name('delete.all');
+        Route::get('class/filter',[ClassgradeController::class,'classFilter'])->name('class.filter');
+        //End Classes
+
+        //Sections
+        Route::resource('sections',SectionController::class);
+        Route::get('getclass/{grade}',[SectionController::class,'getClass']);
+        //End Sections
 
 
         });

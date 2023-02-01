@@ -1,9 +1,8 @@
 @extends('layouts.master')
 @section('css')
 @toastr_css
-
 @section('title')
-    {{trans('classes.title')}}
+{{trans('classes.title')}}
 @stop
 @endsection
 @section('page-header')
@@ -46,6 +45,17 @@
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChecked" id="btnDeleteChecked" >
                             {{trans('classes.btn_delete_checked')}}
                         </button>
+                        <form action="{{route('class.filter')}}" method="POST">
+                            @csrf
+                            @method('get')
+                            <select class="form-select" data-style="btn-info" name="grade_id" required
+                                    onchange="this.form.submit()">
+                                <option value="" selected disabled>{{trans('classes.grade_select')}}</option>
+                                @foreach ($grades as $grade)
+                                    <option value="{{ $grade->id }}">{{$grade->name}}</option>
+                                @endforeach
+                            </select>
+                        </form>
                         <br><br>
                         <div class="card card-statistics h-100">
                             <div class="card-body">
@@ -62,7 +72,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($classes as $class )
+                                        @if (isset($details))
+                                            @php
+                                                $showClasses=$details;
+                                            @endphp
+                                            @else
+                                            @php
+                                                $showClasses=$classes;
+                                            @endphp
+                                        @endif
+                                    @foreach ($showClasses as $class )
                                         <tr>
                                             <td><input name="select_one" type="checkbox"  value="{{$class->id}}" class="box" ></td>
                                             <td>{{$loop->iteration}}</td>
@@ -77,7 +96,6 @@
                                                 data-en="{{$class->getTranslation('name', 'en')}}"
                                                 title=""><i class="fa fa-edit"></i>
                                             </button>
-
                                             <button type="button" class="btn btn-danger btn-sm delete" data-toggle="modal"
                                                 data-deleteid="{{$class->id}}"
                                                 data-target="#deletegrade"
@@ -97,6 +115,7 @@
             </div>
         </div>
     </div>
+
     <!-- ADD -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -213,7 +232,6 @@
                                     </option>
                                 @endforeach
                             </select>
-
                         </div>
                 </div>
                 <div class="modal-footer">
@@ -269,8 +287,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
-            <form action="{{route('deleteall')}}" method="POST">
+            <form action="{{route('delete.all')}}" method="POST">
                 @csrf
                 @method('post')
                 <div class="modal-body">
@@ -294,9 +311,8 @@
 @section('js')
 @toastr_js
 @toastr_render
-<script>
+<script type="text/javascript">
     $(document).ready(function(){
-
         // <!--Edit -->
         $(document).on('click', '.edit', function(event){
             event.preventDefault();
@@ -308,22 +324,16 @@
             $('#grade_id').val(idGrade);
             $('#namear').val(name_ar);
             $('#nameen').val(name_en);
-
         });
         // <!--Delete -->
         $(document).on('click', '.delete', function(event){
             event.preventDefault();
             var id = $(this).data('deleteid');
             $('#iddelete').val(id);
-
         });
-
-    });
-</script>
-<script type="text/javascript">
-        // <!--CHECKEDBOX-->
-    $(function() {
-        $("#btnDeleteChecked").click(function() {
+         // <!--CHECKEDBOX-->
+        $(document).on('click','#btnDeleteChecked',function(event) {
+            event.preventDefault();
             var selected = new Array();
             $("#datatable input[type=checkbox]:checked").each(function() {
                 selected.push(this.value);
@@ -333,20 +343,15 @@
                 $('input[id="deleteCheckedID"]').val(selected);
             }
         });
-    });
-
-    $(document).ready(function() {
-        // <!--SHOWBTN-->
+         // <!--SHOWBTN-->
         var $delete = $("#btnDeleteChecked").hide(),
             $checked = $('input[name="select_all"]').click(function() {
             $delete.toggle( $checked.is(":checked") );
         });
-
         var $delete = $("#btnDeleteChecked").hide(),
             $checked = $('input[name="select_one"]').click(function() {
             $delete.toggle( $checked.is(":checked") );
         });
-
     });
 </script>
 @endsection

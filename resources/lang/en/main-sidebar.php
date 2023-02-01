@@ -19,5 +19,5 @@ return [
     'settings'=>'Settings',
     'users'=>'Users',
     'classeslist'=>'Classes List',
-
+    'sectionslist'=>'Sections List',
 ];

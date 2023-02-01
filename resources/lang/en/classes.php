@@ -24,4 +24,6 @@ return [
     'btn_delete_checked'=>'Delete Selected Classes',
     'modaltitle_delete_checked'=>'Delete the selected Classes',
     'modalbody_delete_checked'=>'Are you Sure You Want To Delete The Group Of Selected Classes ?',
+    'grade_select'=>'Select Grade',
+
 ];

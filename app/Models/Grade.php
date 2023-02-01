@@ -15,7 +15,12 @@ class Grade extends Model
         'name',
         'description'
     ];
+
     public function classgrade(){
         return $this->hasMany(Classgrade::class);
+    }
+
+    public function sections(){
+        return $this->hasMany(Section::class);
     }
 }

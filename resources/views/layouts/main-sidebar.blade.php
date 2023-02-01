@@ -37,7 +37,6 @@
                         </a>
                         <ul id="calendar-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('classes.index')}}">{{trans('main-sidebar.classeslist')}}</a> </li>
-                            <li> <a href="calendar-list.html">List Calendar</a> </li>
                         </ul>
                     </li>
                     <!--sections-->
@@ -49,9 +48,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="chart" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="chart-js.html">Chart.js</a> </li>
-                            <li> <a href="chart-morris.html">Chart morris </a> </li>
-                            <li> <a href="chart-sparkline.html">Chart Sparkline</a> </li>
+                            <li> <a href="{{route('sections.index')}}">{{trans('main-sidebar.sectionslist')}}</a> </li>
+
                         </ul>
                     </li>
 

@@ -32,7 +32,7 @@ class ClassgradeController extends Controller
             $classes->save();
         }
         toastr()->success(trans('messages.success'));
-        return redirect()->back();
+        return redirect()->route('classes.index');
     }
 
     public function update(ClassRequest $request)
@@ -43,14 +43,14 @@ class ClassgradeController extends Controller
             $class->grade_id=$request->grade_id
         ]);
         toastr()->success(trans('messages.edit'));
-        return redirect()->back();
+        return redirect()->route('classes.index');
     }
 
     public function destroy(Request $request)
     {
         $class =Classgrade::find($request->id)->delete();
         toastr()->warning(trans('messages.delete'));
-        return redirect()->back();
+        return redirect()->route('classes.index');
     }
 
     public function deleteCheckedBox(Request $request)
@@ -59,7 +59,12 @@ class ClassgradeController extends Controller
         Classgrade::whereIn('id',$deleteChecked)->delete();
         toastr()->warning(trans('messages.delete'));
         return redirect()->route('classes.index');
+    }
 
-
+    public function classFilter(Request $request)
+    {
+        $grades=Grade::all();
+        $filter=Classgrade::select('*')->where('grade_id',$request->grade_id)->get();
+        return view ('classes.classes',['grades'=>$grades])->withDetails($filter);
     }
 }
