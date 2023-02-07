@@ -9,7 +9,7 @@ return [
 
     'section_name'=>'اسم القسم',
     'class_name'=>'اسم الصف',
-    'statue'=>'الحالة',
+    'status'=>'الحالة',
     'select_grade'=>'اختر المرحلة',
     'actions'=>'العمليات',
     'new_row'=>'صف جديد',
@@ -31,7 +31,8 @@ return [
     'select_class'=>'أختر الصف',
     'submit'=>'حفظ البايات',
     'close'=>'اغلاق',
-
+    'active'=>'نشط',
+    'inactive'=>'غير نشط'
 
 
 ];

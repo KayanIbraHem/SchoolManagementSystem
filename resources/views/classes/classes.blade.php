@@ -205,8 +205,7 @@
                         @csrf
                         <div class="row">
                             <div class="col">
-                                <label for="name_ar" class="mr-sm-2">{{trans('classes.class_ar')}}
-                                    :</label>
+                                <label for="name_ar" class="mr-sm-2">{{trans('classes.class_ar')}}:</label>
                                 <input type="hidden" id="id" name="id" class="form-control">
                                 <input id="namear" type="text" name="name_ar" class="form-control @error('name_ar') is-invalid @enderror">
                                 @error('name_ar') <div class="form-text text-danger">{{ $message }}</div> @enderror

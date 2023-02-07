@@ -9,7 +9,7 @@ return [
 
     'section_name'=>'Section Name',
     'class_name'=>'Class Name',
-    'statue'=>'Statue',
+    'status'=>'Status',
 
     'select_grade'=>'Select Grade',
     'actions'=>'Actions',
@@ -22,12 +22,12 @@ return [
     'name_en_req'=>'Section Name In English Required',
     'deletemsg'=>'You are now deleting?',
     'deletegrade'=>'Delete Section',
-
-
     'section_ar'=>'Section Name In Arabic',
     'section_en'=>'Section Name In English',
     'select_class'=>'Select Class',
     'submit'=>'Save',
     'close'=>'Close',
+    'active'=>'Active',
+    'inactive'=>'Inactive'
 
 ];

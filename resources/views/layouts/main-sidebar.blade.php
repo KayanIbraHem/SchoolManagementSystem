@@ -92,9 +92,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="table" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="data-html-table.html">Data html table</a> </li>
-                            <li> <a href="data-local.html">Data local</a> </li>
-                            <li> <a href="data-table.html">Data table</a> </li>
+                            <li> <a href="#">{{trans('parents.parents_table')}}</a></li>
+                            <li> <a href="{{route('parent.add')}}">{{trans('parents.new_parent')}}</a> </li>
                         </ul>
                     </li>
                     <!--accounts-->

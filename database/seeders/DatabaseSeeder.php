@@ -1,6 +1,8 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call(BloodSeeder::class);
+        $this->call(NationalitySedeer::class);
+        $this->call(ReligionSedeer::class);
     }
 }

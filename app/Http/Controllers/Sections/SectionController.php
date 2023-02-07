@@ -17,11 +17,13 @@ class SectionController extends Controller
      */
     public function index()
     {
+        $allSections=Section::all();
         $grades=Grade::with(['sections'])->get();
         $gradeList=Grade::all();
         return view('sections.sections',[
             'grades'=>$grades,
-            'gradeList'=>$gradeList
+            'gradeList'=>$gradeList,
+            'allSections'=>$allSections
         ]);
     }
 
@@ -72,7 +74,7 @@ class SectionController extends Controller
      */
     public function edit(Section $section)
     {
-        //
+       //
     }
 
     /**
@@ -82,9 +84,22 @@ class SectionController extends Controller
      * @param  \App\Models\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Section $section)
+    public function update(Request $request)
     {
-        //
+        $section=Section::findorFail($request->id);
+        $section->update([
+        $section->name=['ar'=>$request->name_s_ar,'en'=>$request->name_s_en],
+        $section->grade_id=$request->grade_id,
+        $section->classgrade_id=$request->class_id,
+        ]);
+        if(isset($request->status)){
+            $section->status=1;
+        }else{
+            $section->status=2;
+        }
+        $section->save();
+        toastr()->success(trans('messages.edit'));
+        return redirect()->route('sections.index');
     }
 
     /**
@@ -93,9 +108,11 @@ class SectionController extends Controller
      * @param  \App\Models\Section  $section
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Section $section)
+    public function destroy(Request $request)
     {
-        //
+        Section::findorfail($request->sectionID)->delete();
+        toastr()->warning(trans('messages.delete'));
+        return redirect()->route('sections.index');
     }
 
     public function getClass($gradeID){

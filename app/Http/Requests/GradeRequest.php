@@ -25,7 +25,7 @@ class GradeRequest extends FormRequest
     {
         return [
             'name_ar'=>'required|min:4|unique:grades,name->ar,'.$this->id,
-            'name_en'=>'required|min:4|min:4|unique:grades,name->ar,'.$this->id,
+            'name_en'=>'required|min:4|min:4|unique:grades,name->en,'.$this->id,
             'description'=>'required|min:4',
         ];
     }

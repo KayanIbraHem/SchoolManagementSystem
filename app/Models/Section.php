@@ -13,6 +13,9 @@ class Section extends Model
     use HasFactory, HasTranslations;
 
     public function classgrade(){
-        return $this->belongsTo(Classgrade::class);
+        return $this->belongsTo(Classgrade::class,'classgrade_id');
+    }
+    public function grade(){
+        return $this->belongsTo(Grade::class);
     }
 }

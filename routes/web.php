@@ -41,6 +41,9 @@ Route::group([
         Route::get('getclass/{grade}',[SectionController::class,'getClass']);
         //End Sections
 
+        //Parents
+        Route::view('newparent','livewire.show')->name('parent.add');
+        //End Parents
 
         });
 

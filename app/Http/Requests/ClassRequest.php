@@ -24,8 +24,8 @@ class ClassRequest extends FormRequest
     public function rules()
     {
         return [
-            'data_list.*.name_ar' => 'required|min:4|unique:classgrades,name->ar,'.$this->id,
-            'data_list.*.name_en' => 'required|min:4|unique:classgrades,name->en,'.$this->id,
+            'data_list.*.name_ar' => 'required|min:4',
+            'data_list.*.name_en' => 'required|min:4',
         ];
     }
 

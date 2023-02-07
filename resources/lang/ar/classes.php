@@ -25,6 +25,8 @@ return [
     'modaltitle_delete_checked'=>'حذف مجموعة الصفوف المحددة',
     'modalbody_delete_checked'=>'هل انت متأكد من عملية حذف مجموعة الصفوف؟',
     'grade_select'=>'اختر المرحلة الدراسية',
+    'status_on'=>'نشط',
+    'status_off'=>'غير نشط',
 
 
 ];
