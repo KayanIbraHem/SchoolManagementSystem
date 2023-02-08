@@ -43,7 +43,7 @@
                     <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button"
                             wire:click="back(2)">{{ trans('parents.back') }}
                     </button>
-                    <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="submitForm"
+                    <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="SaveParent"
                             type="button">{{ trans('parents.confirm_info') }}
                     </button>
                 </div>
