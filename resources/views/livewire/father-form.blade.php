@@ -15,7 +15,7 @@
                     </div>
                     <div class="col">
                         <label for="title">{{trans('parents.parent_password')}}</label>
-                        <input type="password" wire:model="password" class="form-control" >
+                        <input type="text" wire:model="password" class="form-control" >
                         @error('password')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -119,9 +119,15 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                @if($updateForm)
+                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmitEdit"
+                            type="button">{{trans('parents.next')}}
+                </button>
+                @else
                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit"
                             type="button">{{trans('parents.next')}}
                 </button>
+                @endif
             </div>
         </div>
     </div>

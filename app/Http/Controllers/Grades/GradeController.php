@@ -18,11 +18,7 @@ class GradeController extends Controller
     }
 
     public function store(GradeRequest $request)
-    {
-        // if(Grade::where('name->ar',$request->name_ar)->orwhere('name->en',$request->name_en)->exists())
-        // {
-        //         return redirect()->back()->withErrors('خطأ');
-        // }
+    { 
         $grade=new Grade();
         $grade->name=[
             'ar'=>$request->name_ar,
@@ -55,8 +51,5 @@ class GradeController extends Controller
         }
             toastr()->error(trans('schoolgrade.delete_error'));
             return redirect()->back();
-
-
     }
-
 }

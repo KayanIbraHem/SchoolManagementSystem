@@ -16,6 +16,9 @@ return [
     'save_info'=>'Are you sure to save the data?',
     'next'=>'Next',
     'back'=>'Back',
+    'edit'=>'Edit',
+    'delete'=>'Delete',
+    'action'=>'Actions',
     //Father
     'father_info'=>'Father Information',
     'father_ar_name'=>'Arabic Father Name',
@@ -42,4 +45,7 @@ return [
     'mother_bloodtype'=>'Mother BloodType',
     'mother_religion'=>'Mother Religion',
     'mother_address'=>'Mother Address',
+
+    'attachment'=>'upload copy of parent id or passport!'
+
 ];

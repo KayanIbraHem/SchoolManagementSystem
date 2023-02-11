@@ -92,8 +92,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="table" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="#">{{trans('parents.parents_table')}}</a></li>
-                            <li> <a href="{{route('parent.add')}}">{{trans('parents.new_parent')}}</a> </li>
+                            {{-- <li> <a href="#">{{trans('parents.parents_table')}}</a></li> --}}
+                            <li> <a href="{{route('parent.add')}}">{{trans('parents.parents_table')}}</a> </li>
                         </ul>
                     </li>
                     <!--accounts-->

@@ -5,6 +5,10 @@
             {{ $successMessage }}
         </div>
     @endif
+
+    @if($showParentTable)
+    @include('livewire.parent-table')
+    @else
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
@@ -33,21 +37,29 @@
         @endif
             <div class="col-xs-12">
                 <div class="col-md-12"><br>
-                    {{-- <label style="color: red">{{trans('Parent_trans.Attachments')}}</label>
+                    <label style="color: red">{{trans('parents.attachment')}}</label>
                     <div class="form-group">
                         <input type="file" wire:model="photos" accept="image/*" multiple>
                     </div>
-                    <br> --}}
-                    {{-- <input type="hidden" wire:model="Parent_id"> --}}
+                    <br>
+                    <input type="hidden" wire:model="parent_id">
+
                     <h3>{{ trans('parents.save_info') }}</h3>
                     <button class="btn btn-danger btn-sm nextBtn btn-lg pull-right" type="button"
                             wire:click="back(2)">{{ trans('parents.back') }}
                     </button>
+                    @if($updateForm)
+                    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="UpdateParentForm"
+                        type="button">{{trans('parents.confirm_info')}}
+                    </button>
+                    @else
                     <button class="btn btn-success btn-sm btn-lg pull-right" wire:click="SaveParent"
                             type="button">{{ trans('parents.confirm_info') }}
                     </button>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
+    @endif
 </div>

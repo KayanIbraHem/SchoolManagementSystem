@@ -15,6 +15,9 @@ return [
     'save_info'=>'هل متاكد متأكد من حفظ البيانات؟',
     'next'=>'التالي',
     'back'=>'السابق',
+    'edit'=>'تعديل',
+    'delete'=>'حذف',
+    'action'=>'العمليات',
     //father
     'father_info'=>'معلومات الأب',
     'father_ar_name'=>'اسم الأب بالعربية',
@@ -41,4 +44,6 @@ return [
     'mother_bloodtype'=>'فصيلة دم الأم',
     'mother_religion'=>'ديانة الأم',
     'mother_address'=>'عنوان الأم',
+
+    'attachment'=>' ارفاق صورة البطاقه/جواز السفر الخاصه بولي الامر ان امكن! '
 ];
