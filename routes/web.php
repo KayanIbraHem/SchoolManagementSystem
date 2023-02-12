@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\Classgrade\ClassgradeController;
 use App\Http\Controllers\Sections\SectionController;
+use App\Http\Controllers\Teachers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,9 +42,13 @@ Route::group([
         Route::get('getclass/{grade}',[SectionController::class,'getClass']);
         //End Sections
 
-        //Parents
+        //Parents Livewire
         Route::view('newparent','livewire.show')->name('parent.add');
-        //End Parents
+        //End Parents Livewire
+
+        //Teachers
+        Route::resource('teachers',TeacherController::class);
+        //End Teachers
 
         });
 

@@ -130,7 +130,7 @@ class NewParent extends Component
         }
         $this->successMessage = trans('messages.success');
         $this->clearForm();
-        $this->currentStep = 1;
+        return redirect()->to('newparent');
     }
     public function edit($id)
     {
@@ -226,9 +226,12 @@ class NewParent extends Component
     public function delete($id)
     {
         ParentAttachment::where('parent_id',$id)->delete();
-        StudentParent::findorFail($id)->delete();
+        $studentParent=StudentParent::find($id);
+        \Storage::disk('parent_attachments')->deleteDirectory($studentParent->father_nationaid);
+        $studentParent->delete();
         return redirect()->to('newparent');
     }
+
     public function firstStepSubmitEdit()
     {
         $this->updateForm=true;

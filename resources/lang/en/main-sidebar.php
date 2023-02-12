@@ -20,4 +20,5 @@ return [
     'users'=>'Users',
     'classeslist'=>'Classes List',
     'sectionslist'=>'Sections List',
+    'teacherslist'=>'Teachers List',
 ];
