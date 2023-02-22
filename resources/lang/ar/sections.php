@@ -10,6 +10,7 @@ return [
     'section_name'=>'اسم القسم',
     'class_name'=>'اسم الصف',
     'status'=>'الحالة',
+    'teacher_select'=>'اختر المدرس',
     'select_grade'=>'اختر المرحلة',
     'actions'=>'العمليات',
     'new_row'=>'صف جديد',

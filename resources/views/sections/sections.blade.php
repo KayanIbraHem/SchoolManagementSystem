@@ -142,6 +142,21 @@
                                                                                     for="exampleCheck1">{{ trans('sections.status') }}</label><br>
                                                                             </div>
                                                                         </div>
+                                                                        <BR>
+                                                                        <div class="col">
+                                                                            <label for="inputName" class="control-label">{{ trans('sections.teacher_select') }}</label>
+                                                                            <select multiple name="teacher_id[]" class="form-control" id="exampleFormControlSelect2">
+
+                                                                                @foreach($section->teachers as $teacher)
+                                                                                <option selected value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                                                                 @endforeach
+
+                                                                                @foreach($teachers as $teacher)
+                                                                                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                                                                @endforeach
+
+                                                                            </select>
+                                                                        </div>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
@@ -211,6 +226,15 @@
                             </select>
                         </div>
                         <br>
+                        <div class="col">
+                            <label for="inputName" class="control-label">{{ trans('sections.teacher_select') }}</label>
+                            <select multiple name="teacher_id[]" class="form-control" id="exampleFormControlSelect2">
+                                @foreach($teachers as $teacher)
+                                    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('sections.close') }}</button>
                             <button type="submit" class="btn btn-danger">{{ trans('sections.submit') }}</button>

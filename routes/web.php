@@ -24,32 +24,31 @@ Route::middleware(['guest'])->group(function () {
     });
 
 Route::group([
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
-        ], function(){
+            'prefix' => LaravelLocalization::setLocale(),
+            'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
+            ], function(){
 
-        Route::get('/dashboard', [App\Http\Controllers\HomeController::class    , 'index'])->name('home');
+            Route::get('/dashboard', [App\Http\Controllers\HomeController::class    , 'index'])->name('home');
 
-        Route::resource('grades',GradeController::class);
-        //Classes
-        Route::resource('classes',ClassgradeController::class);
-        Route::post('delete/all',[ClassgradeController::class,'deleteCheckedBox'])->name('delete.all');
-        Route::get('class/filter',[ClassgradeController::class,'classFilter'])->name('class.filter');
-        //End Classes
+            Route::resource('grades',GradeController::class);
+            //Classes
+            Route::resource('classes',ClassgradeController::class);
+            Route::post('delete/all',[ClassgradeController::class,'deleteCheckedBox'])->name('delete.all');
+            Route::get('class/filter',[ClassgradeController::class,'classFilter'])->name('class.filter');
+            //End Classes
 
-        //Sections
-        Route::resource('sections',SectionController::class);
-        Route::get('getclass/{grade}',[SectionController::class,'getClass']);
-        //End Sections
+            //Sections
+            Route::resource('sections',SectionController::class);
+            Route::get('getclass/{grade}',[SectionController::class,'getClass']);
+            //End Sections
 
-        //Parents Livewire
-        Route::view('newparent','livewire.show')->name('parent.add');
-        //End Parents Livewire
+            //Parents Livewire
+            Route::view('newparent','livewire.show')->name('parent.add');
+            //End Parents Livewire
 
-        //Teachers
-        Route::resource('teachers',TeacherController::class);
-        //End Teachers
-
+            //Teachers
+            Route::resource('teachers',TeacherController::class);
+            //End Teachers
         });
 
 

@@ -10,7 +10,7 @@ return [
     'section_name'=>'Section Name',
     'class_name'=>'Class Name',
     'status'=>'Status',
-
+    'teacher_select'=>'Select Teacher',
     'select_grade'=>'Select Grade',
     'actions'=>'Actions',
     'new_row'=>'New Row',
