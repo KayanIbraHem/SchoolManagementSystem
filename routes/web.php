@@ -5,6 +5,7 @@ use App\Http\Controllers\Grades\GradeController;
 use App\Http\Controllers\Classgrade\ClassgradeController;
 use App\Http\Controllers\Sections\SectionController;
 use App\Http\Controllers\Teachers\TeacherController;
+use App\Http\Controllers\Students\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ Route::middleware(['guest'])->group(function () {
         });
     });
 
-Route::group([
+Route::group([ 
             'prefix' => LaravelLocalization::setLocale(),
             'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
             ], function(){
@@ -49,6 +50,12 @@ Route::group([
             //Teachers
             Route::resource('teachers',TeacherController::class);
             //End Teachers
+
+            //Students
+            Route::resource('students',StudentController::class);
+            Route::get('get_class/{id}',[StudentController::class,'getClass']);
+            Route::get('get_section/{id}',[StudentController::class,'getSection']);
+            //End Students
         });
 
 

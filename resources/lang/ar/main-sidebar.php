@@ -9,6 +9,7 @@ return [
     'classes'=>'الصفوف',
     'sections'=>'الأقسام',
     'students'=>'الطلاب',
+    'new_student'=>'اضافة طالب جديد',
     'teachers'=>'المعلمين',
     'parents'=>'أولياء الامور',
     'accounts'=>'الحسابات',

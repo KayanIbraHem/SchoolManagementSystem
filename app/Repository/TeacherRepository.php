@@ -59,8 +59,7 @@ class TeacherRepository implements TeacherRepositoryInterface{
         $teacher->address=$request->address, 
         ]);
         toastr()->success(trans('messages.edit'));
-        return redirect()->route('teachers.index');
-        
+        return redirect()->route('teachers.index');    
     }
 
     public function deleteTeacher($request)
