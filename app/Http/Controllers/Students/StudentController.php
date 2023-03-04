@@ -17,7 +17,7 @@ class StudentController extends Controller
 
     public function index()
     {
-        //
+       return $this->student->getAllStudents();
     }
 
     
@@ -36,26 +36,28 @@ class StudentController extends Controller
         //
     }
    
-    public function edit(Student $student)
+    public function edit($id)
     {
-        //
+        return $this->student->editStudent($id);
     }
 
-    public function update(Request $request, Student $student)
+    public function update(Request $request)
     {
-        //
+       return $this->student->updateStudent($request);
     }
 
-    public function destroy(Student $student)
+    public function destroy(Request $request)
     {
-        //
+        return $this->student->deleteStudent($request);
     }
+
     public function getClass($id)
     {
-        return $this->student->getClass($id);
+        return $this->student->getClassID($id);
     }
+    
     public function getSection($id)
     {
-        return $this->student->getSection($id);
+        return $this->student->getSectionID($id);
     }
 }

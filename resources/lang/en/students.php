@@ -29,6 +29,29 @@ return [
     'select_section'=>'Select Section',
     'select_parent'=>'Select Parent',
     'select_academicy_ear'=>'Select Academic Year',
-    'submit'=>'Submit'
-
+    'submit'=>'Submit',
+    //StudentsList
+    'list_title'=>'Students List',
+    'list_page_topic'=>'Students List',
+    'list_page_title'=>'Students List',
+    'student_name'=>'Name',
+    'student_email'=>'Email',
+    'student_gender'=>'Gender',
+    'student_garde'=>'Grade',
+    'student_class'=>'Class Room',
+    'student_section'=>'Section',
+    'actions'=>'Actions',
+    'student_view'=>'View Student',
+    'student_edit'=>'Edit Student',
+    'students_delete'=>'Delete Student',
+    'new'=>'Add New Student',
+    //EditStudent
+    'edit_title'=>'Edit Student',
+    'edit_page_topic'=>'Edit Student',
+    'edit_page_title'=>'Edit Student',
+    //DeleteStudent
+    'student_delete'=>'Delete Student',
+    'student_delete_title'=>'Are you sure about the student deletion process?',
+    'delete'=>'Delete',
+    'close'=>'Cancel'
 ];

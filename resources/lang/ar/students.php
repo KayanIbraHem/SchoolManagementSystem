@@ -29,5 +29,29 @@ return [
     'select_section'=>'أختر القسم',
     'select_parent'=>'أختر الاب',
     'select_academicy_ear'=>'حدد السنة الدراسية',
-    'submit'=>'تأكيد'
+    'submit'=>'تأكيد',
+    //StudentsList
+    'list_title'=>'قائمة الطلاب',
+    'list_page_topic'=>'قائمة الطلاب',
+    'list_page_title'=>'قائمة الطلاب',
+    'student_name'=>'الاسم ',
+    'student_email'=>'البريد الالكتروني',
+    'student_gender'=>'النوع',
+    'student_garde'=>'المرحلة الدراسية',
+    'student_class'=>'الصف الدراسي',
+    'student_section'=>'القسم',
+    'actions'=>'العمليات',
+    'student_view'=>'عرض بيانات الطالب',
+    'student_edit'=>'تعديل بيانات الطالب',
+    'students_delete'=>'حذف الطالب',
+    'new'=>'اضافة طالب جديد',
+     //EditStudent
+     'edit_title'=>'تعديل الطالب',
+     'edit_page_topic'=>'تعديل بيانات الطالب',
+     'edit_page_title'=>'تعديل بيانات الطالب',
+     //DeleteStudent
+     'student_delete'=>'حذف الطالب',
+     'student_delete_title'=>'هل أنت متأكد من عملية حذف الطالب؟',
+     'delete'=>'تأكيد الحذف',
+     'close'=>'الغاء'
 ];

@@ -9,6 +9,7 @@ return [
     'classes'=>'Classes',
     'sections'=>'Sections',
     'students'=>'Students',
+    'students_list'=>'Students List',
     'new_student'=>'Add New Student',
     'teachers'=>'Teachers',
     'parents'=>'Parents',
