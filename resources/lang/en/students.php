@@ -53,5 +53,19 @@ return [
     'student_delete'=>'Delete Student',
     'student_delete_title'=>'Are you sure about the student deletion process?',
     'delete'=>'Delete',
-    'close'=>'Cancel'
+    'close'=>'Cancel',
+    //ShowStudent
+    'name'=>'Student Name',
+    'show_title'=>'Student Informations',
+    'show_page_title'=>'Student Information',
+    'show_page_topic'=>'Student Information',
+    'show_table_title'=>'Student Information List',
+    'show_attachment'=>'Attachment',
+    'created_at'=>'Added Date',
+    'download'=>'Download',
+    //DeleteModal
+    'delete_attachment'=>'Delete Attachment',
+    'confirm_attachment_deletion'=>'Are you sure to delete the attachment?'
+    
+
 ];

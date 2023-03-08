@@ -52,6 +52,18 @@ return [
      //DeleteStudent
      'student_delete'=>'حذف الطالب',
      'student_delete_title'=>'هل أنت متأكد من عملية حذف الطالب؟',
-     'delete'=>'تأكيد الحذف',
-     'close'=>'الغاء'
-];
+     'delete'=>'حذف',
+     'close'=>'الغاء',
+     //ShowStudent
+     'name'=>'اسم الطالب',
+     'show_title'=>'معلومات الطالب',
+     'show_page_title'=>'معلومات الطالب',
+     'show_page_topic'=>'معلومات الطالب',
+     'show_table_title'=>'قائمة معلومات الطالب',
+     'show_attachment'=>'المرفقات',
+     'created_at'=>'وقت الاضافه',
+    'download'=>'تحميل',
+    //DeleteModal
+    'delete_attachment'=>'حذف المرفق',
+    'confirm_attachment_deletion'=>'هل انت متأكد من حذف المرفق؟'
+    ];

@@ -66,7 +66,7 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             <a class="dropdown-item" href="{{route('students.show',$student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp; {{ trans('students.student_view') }}</a>
                                             <a class="dropdown-item" href="{{route('students.edit',$student->id)}}"><i style="color:green" class="fa fa-edit"></i>&nbsp;{{ trans('students.student_edit') }}</a>
-                                            <a class="dropdown-item" data-target="#delete_student{{$student->id}}" data-toggle="modal" href="#"><i style="color: red" class="fa fa-trash"></i>&nbsp;{{ trans('students.students_delete') }}</a>
+                                            <a class="dropdown-item" href="{{route('students.show',$student->id)}}"><i style="color: red" class="fa fa-trash"></i>&nbsp;{{ trans('students.students_delete') }}</a>
                                         </div>
                                     </div>
                                 </td>
