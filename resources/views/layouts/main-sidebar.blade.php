@@ -63,7 +63,7 @@
                         <ul id="font-icon" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('students.index')}}">{{trans('main-sidebar.students_list')}}</a> </li>
                             <li> <a href="{{route('students.create')}}">{{trans('main-sidebar.new_student')}}</a> </li>
-                            <li> <a href="weather-icon.html">Weather icons</a> </li>
+                            <li> <a href="{{route('promotions.index')}}">{{ trans('main-sidebar.students_promotions') }}</a> </li>
                         </ul>
                     </li>
                     <!--teachers-->

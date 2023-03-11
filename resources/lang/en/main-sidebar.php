@@ -10,6 +10,7 @@ return [
     'sections'=>'Sections',
     'students'=>'Students',
     'students_list'=>'Students List',
+    'students_promotions'=>'Students Promotions',
     'new_student'=>'Add New Student',
     'teachers'=>'Teachers',
     'parents'=>'Parents',

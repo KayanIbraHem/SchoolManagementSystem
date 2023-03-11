@@ -6,6 +6,7 @@ use App\Http\Controllers\Classgrade\ClassgradeController;
 use App\Http\Controllers\Sections\SectionController;
 use App\Http\Controllers\Teachers\TeacherController;
 use App\Http\Controllers\Students\StudentController;
+use App\Http\Controllers\Students\Promotions\PromotionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +59,9 @@ Route::group([
             Route::post('upload_attachment/{student_name}/{student_id}',[StudentController::class,'uploadAttachment'])->name('upload_attachment');
             Route::get('download_attachment/{student_name}/{file_name}',[StudentController::class,'downloadAttachment'])->name('download_attachment');
             Route::post('delete_attachment',[StudentController::class,'deleteAttachment'])->name('delete_attachment');
+            //Promnotions
+            Route::resource('promotions',PromotionController::class);
+            //End Promnotions
             //End Students
         });
 

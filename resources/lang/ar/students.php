@@ -65,5 +65,17 @@ return [
     'download'=>'تحميل',
     //DeleteModal
     'delete_attachment'=>'حذف المرفق',
-    'confirm_attachment_deletion'=>'هل انت متأكد من حذف المرفق؟'
+    'confirm_attachment_deletion'=>'هل انت متأكد من حذف المرفق؟',
+    //promotions
+    'promotion_title'=>'ترقية الطلاب',
+    'promotion_page_title'=>'ترقية الطلاب',
+    'promotion_topic'=>'ترقية الطلاب',
+    'current_grades'=>'المراحلة الدراسية الحالية',
+    'current_grade'=>'المرحلة الحالية',
+    'current_class'=>'الصف الحالي',
+    'current_section'=>'القسم الحالي',
+    'new_grades'=>'المرحلة الدراسية الجديدة',
+    'new_grade'=>'المرحله الجديدة',
+    'new_class'=>'الصف الجديد',
+    'new_section'=>'القسم الجديد',
     ];

@@ -10,6 +10,7 @@ return [
     'sections'=>'الأقسام',
     'students'=>'الطلاب',
     'students_list'=>'قائمة الطلاب',
+    'students_promotions'=>'ترقيات الطلاب',
     'new_student'=>'اضافة طالب جديد',
     'teachers'=>'المعلمين',
     'parents'=>'أولياء الامور',

@@ -65,7 +65,18 @@ return [
     'download'=>'Download',
     //DeleteModal
     'delete_attachment'=>'Delete Attachment',
-    'confirm_attachment_deletion'=>'Are you sure to delete the attachment?'
-    
+    'confirm_attachment_deletion'=>'Are you sure to delete the attachment?',
+    //promotions
+    'promotion_title'=>'Students Promotions',
+    'promotion_page_title'=>'Students Promotions',
+    'promotion_topic'=>'Students Promotions',
+    'current_grades'=>'Current Grades',
+    'current_grade'=>'Current Grade',
+    'current_class'=>'Current Class',
+    'current_section'=>'Current Section',
+    'new_grades'=>'New Grades',
+    'new_grade'=>'New Grade',
+    'new_class'=>'New Class',
+    'new_section'=>'New Section',
 
 ];
