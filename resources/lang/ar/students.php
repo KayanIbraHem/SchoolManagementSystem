@@ -70,6 +70,9 @@ return [
     'promotion_title'=>'ترقية الطلاب',
     'promotion_page_title'=>'ترقية الطلاب',
     'promotion_topic'=>'ترقية الطلاب',
+    'promotion_management_title'=>'ادارة ترقيات الطلاب',
+    'promotion_management_page_title'=>'ادارة ترقيات الطلاب',
+    'promotion_management_topic'=>'ادارة ترقيات الطلاب',
     'current_grades'=>'المراحلة الدراسية الحالية',
     'current_grade'=>'المرحلة الحالية',
     'current_class'=>'الصف الحالي',
@@ -78,4 +81,14 @@ return [
     'new_grade'=>'المرحله الجديدة',
     'new_class'=>'الصف الجديد',
     'new_section'=>'القسم الجديد',
+    //Promotions Management
+    'old_grade'=>'المرحلة السابقة',
+    'old_class'=>'الصف السابق',
+    'old_section'=>'القسم السابق',
+    'old_year'=>'السنة الدراسية السابقة',
+    'current_year'=>'السنة الدراسية الحالية',
+    'promotion_back'=>'تراجع عن الكل',
+    'promotion_back_message'=>'هل انت متأكد من عملية التراجع؟',
+    'promotion_back_all'=>'تراجع عن الكل',
+
     ];

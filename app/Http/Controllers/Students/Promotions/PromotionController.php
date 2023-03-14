@@ -24,7 +24,7 @@ class PromotionController extends Controller
     
     public function create()
     {
-        //
+       return $this->promotion->create();
     }
 
    
@@ -52,8 +52,8 @@ class PromotionController extends Controller
     }
 
     
-    public function destroy(Promotion $promotion)
+    public function destroy(Request $request)
     {
-        //
+        return $this->promotion->destory($request);
     }
 }

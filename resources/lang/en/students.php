@@ -70,13 +70,27 @@ return [
     'promotion_title'=>'Students Promotions',
     'promotion_page_title'=>'Students Promotions',
     'promotion_topic'=>'Students Promotions',
+    'promotion_management_title'=>'Students Promotions Management',
+    'promotion_management_page_title'=>'Students Promotions Management',
+    'promotion_management_topic'=>'Students Promotions Management',
     'current_grades'=>'Current Grades',
     'current_grade'=>'Current Grade',
     'current_class'=>'Current Class',
     'current_section'=>'Current Section',
+    'current_year'=>'Current Academic Year',
     'new_grades'=>'New Grades',
     'new_grade'=>'New Grade',
     'new_class'=>'New Class',
     'new_section'=>'New Section',
-
+    'current_year'=>'Current Academic Year',
+    //Promotions Management
+    'old_grade'=>'Old Grade',
+    'old_class'=>'Old Class',
+    'old_section'=>'Old Section',
+    'old_year'=>'Old Academic Year',
+    'current_year'=>'Current Academic Year',
+    'promotion_back'=>'Back Off All',
+    'promotion_back_message'=>'Are you sure to return all ?',
+    'promotion_back_all'=>'Back All',
 ];
+

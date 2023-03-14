@@ -11,6 +11,7 @@ return [
     'students'=>'الطلاب',
     'students_list'=>'قائمة الطلاب',
     'students_promotions'=>'ترقيات الطلاب',
+    'students_promotions_management'=>'ادارة ترقيات الطلاب',
     'new_student'=>'اضافة طالب جديد',
     'teachers'=>'المعلمين',
     'parents'=>'أولياء الامور',

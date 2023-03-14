@@ -64,6 +64,7 @@
                             <li> <a href="{{route('students.index')}}">{{trans('main-sidebar.students_list')}}</a> </li>
                             <li> <a href="{{route('students.create')}}">{{trans('main-sidebar.new_student')}}</a> </li>
                             <li> <a href="{{route('promotions.index')}}">{{ trans('main-sidebar.students_promotions') }}</a> </li>
+                            <li> <a href="{{route('promotions.create')}}">{{ trans('main-sidebar.students_promotions_management') }}</a> </li>
                         </ul>
                     </li>
                     <!--teachers-->
