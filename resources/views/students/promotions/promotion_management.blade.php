@@ -68,7 +68,7 @@
                                                     </a>
                                                     <button type="button" class="btn btn-danger btn-sm"
                                                             data-toggle="modal"
-                                                            data-target="#"
+                                                            data-target="#delete_one{{$promotion->id}}"
                                                             title="#">
                                                             <i class="fa fa-trash"></i>
                                                     </button>
@@ -78,6 +78,7 @@
                                                     </a>
                                                 </td>
                                             </tr>
+                                        @include('students.promotions.delete_one')
                                         @endforeach
                                         @include('students.promotions.delete_all')
 

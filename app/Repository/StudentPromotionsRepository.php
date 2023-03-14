@@ -27,7 +27,6 @@ class StudentPromotionsRepository implements StudentPromotionsRepositoryInterfac
             ['section_id',$request->section_id],
             ['academic_year',$request->from_academic_year]
             ])
-            
              ->get();
         if(count($students)<1){
             toastr()->error(trans('messages.error'));
@@ -59,20 +58,32 @@ class StudentPromotionsRepository implements StudentPromotionsRepositoryInterfac
 
     public function destory($request)
     {
-        $promotions=Promotion::all();
             if($request->page_id==1){
+                $promotions=Promotion::all();
                 foreach($promotions as $promotion){
-                $IDS=explode(',',$promotion->student_id);
-                Student::wherein('id',$IDS)->update([
-                    'grade_id'=>$promotion->from_grade,
-                    'classgrade_id'=>$promotion->from_classgrade,
-                    'section_id'=>$promotion->from_section,
-                    'academic_year'=>$promotion->from_academic_year
-                ]);
-                Promotion::truncate();
+                    $IDS=explode(',',$promotion->student_id);
+                    Student::wherein('id',$IDS)->update([
+                        'grade_id'=>$promotion->from_grade,
+                        'classgrade_id'=>$promotion->from_classgrade,
+                        'section_id'=>$promotion->from_section,
+                        'academic_year'=>$promotion->from_academic_year
+                    ]);
+                    Promotion::truncate();
                 }
                 toastr()->error(trans('messages.delete'));
                 return redirect()->back();
-            }
+            }else{
+                $promotion = Promotion::findorfail($request->id);
+                student::where('id', $promotion->student_id)
+                    ->update([
+                        'grade_id'=>$promotion->from_grade,
+                        'classgrade_id'=>$promotion->from_classgrade,
+                        'section_id'=>$promotion->from_section,
+                        'academic_year'=>$promotion->from_academic_year
+                    ]);
+                $promotion->delete();
+                toastr()->error(trans('messages.delete'));
+                return redirect()->back();
+        }
     }
 }
