@@ -7,6 +7,8 @@ use App\Repository\StudentRepositoryInterface;
 use App\Repository\StudentRepository;
 use App\Repository\StudentPromotionsRepositoryInterface;
 use App\Repository\StudentPromotionsRepository;
+use App\Repository\StudentGraduatedRepositoryInterface;
+use App\Repository\StudentGraduatedRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -21,6 +23,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(TeacherRepositoryInterface::class, TeacherRepository::class);
         $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
         $this->app->bind(StudentPromotionsRepositoryInterface::class, StudentPromotionsRepository::class);
+        $this->app->bind(StudentGraduatedRepositoryInterface::class, StudentGraduatedRepository::class);
 
     }
 

@@ -18,7 +18,7 @@
                     <!--SchoolStages-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#elements">
-                            <div class="pull-left"><i class="ti-home"></i><span
+                            <div class="pull-left"><i class="fas fa-school"></i><span
                                     class="right-nav-text">{{trans('main-sidebar.SchoolGrades')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -42,7 +42,7 @@
                     <!--sections-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#chart">
-                            <div class="pull-left"><i class="ti-pie-chart"></i><span
+                            <div class="pull-left"><i class="fas fa-chalkboard"></i><span
                                     class="right-nav-text">{{trans('main-sidebar.sections')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
@@ -52,25 +52,40 @@
 
                         </ul>
                     </li>
+                     <!-- students-->
+                     <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu"><i class="fas fa-user-graduate"></i>{{trans('main-sidebar.students')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                        <ul id="students-menu" class="collapse">
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="collapse" data-target="#Student_information">{{trans('main-sidebar.students_list')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                                <ul id="Student_information" class="collapse">
+                                    <li> <a href="{{route('students.create')}}">{{trans('main-sidebar.new_student')}}</a></li>
+                                    <li> <a href="{{route('students.index')}}">{{trans('main-sidebar.students_list')}}</a></li>
+                                </ul>
+                            </li>
 
-                    <!--students-->
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#font-icon">
-                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main-sidebar.students')}}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="font-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('students.index')}}">{{trans('main-sidebar.students_list')}}</a> </li>
-                            <li> <a href="{{route('students.create')}}">{{trans('main-sidebar.new_student')}}</a> </li>
-                            <li> <a href="{{route('promotions.index')}}">{{ trans('main-sidebar.students_promotions') }}</a> </li>
-                            <li> <a href="{{route('promotions.create')}}">{{ trans('main-sidebar.students_promotions_management') }}</a> </li>
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="collapse" data-target="#Students_upgrade">{{trans('main-sidebar.students_promotions')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                                <ul id="Students_upgrade" class="collapse">
+                                    <li> <a href="{{route('promotions.index')}}">{{ trans('main-sidebar.students_promotions') }}</a> </li>
+                                    <li> <a href="{{route('promotions.create')}}">{{ trans('main-sidebar.students_promotions_management') }}</a> </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="collapse" data-target="#Graduate students">{{trans('main-sidebar.student_graduate')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                                <ul id="Graduate students" class="collapse">
+                                    <li> <a href="{{route('graduated.index')}}">{{trans('main-sidebar.graduated_list')}}</a> </li>
+                                    <li> <a href="{{route('graduated.create')}}">{{trans('main-sidebar.new_graduated')}}</a> </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
+
                     <!--teachers-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Form">
-                            <div class="pull-left"><i class="ti-files"></i><span class="right-nav-text">{{trans('main-sidebar.teachers')}}</span></div>
+                            <div class="pull-left"><i class="fas fa-chalkboard-teacher"></i><span class="right-nav-text">{{trans('main-sidebar.teachers')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -81,7 +96,7 @@
                     <!--parents-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#table">
-                            <div class="pull-left"><i class="ti-layout-tab-window"></i><span class="right-nav-text">{{trans('main-sidebar.parents')}}</span></div>
+                            <div class="pull-left"><i class="fas fa-user-tie"></i><span class="right-nav-text">{{trans('main-sidebar.parents')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
@@ -93,7 +108,7 @@
                     <!--accounts-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#custom-page">
-                            <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">{{trans('main-sidebar.accounts')}}</span></div>
+                            <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span class="right-nav-text">{{trans('main-sidebar.accounts')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>

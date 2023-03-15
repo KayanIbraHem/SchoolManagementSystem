@@ -7,6 +7,7 @@ use App\Http\Controllers\Sections\SectionController;
 use App\Http\Controllers\Teachers\TeacherController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\Students\Promotions\PromotionController;
+use App\Http\Controllers\Students\Graduated\GraduatedController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +26,7 @@ Route::middleware(['guest'])->group(function () {
         });
     });
 
-Route::group([ 
+Route::group([
             'prefix' => LaravelLocalization::setLocale(),
             'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth' ]
             ], function(){
@@ -63,6 +64,9 @@ Route::group([
             Route::resource('promotions',PromotionController::class);
             //End Promnotions
             //End Students
+             //Graduated
+             Route::resource('graduated',GraduatedController::class);
+             //End Graduated
         });
 
 

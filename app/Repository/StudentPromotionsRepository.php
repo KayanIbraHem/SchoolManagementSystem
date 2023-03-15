@@ -15,12 +15,12 @@ class StudentPromotionsRepository implements StudentPromotionsRepositoryInterfac
 
     public function create()
     {
-        
+
         return view('students.promotions.promotion_management',['promotions'=>Promotion::all()]);
     }
 
     public function store($request)
-    { 
+    {
         $students=Student::where([
             ['grade_id',$request->grade_id],
             ['classgrade_id',$request->classgrade_id],
@@ -49,7 +49,7 @@ class StudentPromotionsRepository implements StudentPromotionsRepositoryInterfac
                 'to_grade'=>$request->newgrade_id,
                 'to_classgrade'=>$request->newclassgrade_id,
                 'to_section'=>$request->newsection_id,
-                'to_academic_year'=>$request->to_academic_year, 
+                'to_academic_year'=>$request->to_academic_year,
             ]);
         }
         toastr()->success(trans('messages.success'));
