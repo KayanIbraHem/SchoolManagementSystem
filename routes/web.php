@@ -8,16 +8,9 @@ use App\Http\Controllers\Teachers\TeacherController;
 use App\Http\Controllers\Students\StudentController;
 use App\Http\Controllers\Students\Promotions\PromotionController;
 use App\Http\Controllers\Students\Graduated\GraduatedController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Students\FeeInvoices\FeeInvoicesController;
+use App\Http\Controllers\Fees\FeesController;
+
 Auth::routes();
 
 Route::middleware(['guest'])->group(function () {
@@ -64,9 +57,18 @@ Route::group([
             Route::resource('promotions',PromotionController::class);
             //End Promnotions
             //End Students
+
              //Graduated
              Route::resource('graduated',GraduatedController::class);
              //End Graduated
+
+             //Fees
+             Route::resource('fees',FeesController::class);
+             //End Fees
+
+             //FeeInvoices
+             Route::resource('feeinvoices',FeeInvoicesController::class);
+             //End FeeInvoices
         });
 
 

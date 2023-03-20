@@ -113,17 +113,9 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="custom-page" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="projects.html">projects</a> </li>
-                            <li> <a href="project-summary.html">Projects summary</a> </li>
-                            <li> <a href="profile.html">profile</a> </li>
-                            <li> <a href="app-contacts.html">App contacts</a> </li>
-                            <li> <a href="contacts.html">Contacts</a> </li>
-                            <li> <a href="file-manager.html">file manager</a> </li>
-                            <li> <a href="invoice.html">Invoice</a> </li>
-                            <li> <a href="blank.html">Blank page</a> </li>
-                            <li> <a href="layout-container.html">layout container</a> </li>
-                            <li> <a href="error.html">Error</a> </li>
-                            <li> <a href="faqs.html">faqs</a> </li>
+                            <li> <a href="{{route('fees.index')}}">{{ trans('fees.fees_list') }}</a> </li>
+                            <li> <a href="{{route('feeinvoices.index')}}">{{ trans('fees.fee_invoives') }}</a> </li>
+
                         </ul>
                     </li>
                     <!--attendance-->

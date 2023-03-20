@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ReligionSedeer::class);
         $this->call(SpecializationSeeder::class);
         $this->call(GenderSedeer::class);
+        $this->call(FeeTypeSedeer::class);
     }
 }

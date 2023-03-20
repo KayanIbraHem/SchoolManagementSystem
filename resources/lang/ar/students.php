@@ -43,7 +43,8 @@ return [
     'actions'=>'العمليات',
     'student_view'=>'عرض بيانات الطالب',
     'student_edit'=>'تعديل بيانات الطالب',
-    'students_delete'=>'حذف الطالب',
+    'student_delete'=>'حذف الطالب',
+    'student_fees'=>'اضافة فاتورة رسوم',
     'new'=>'اضافة طالب جديد',
      //EditStudent
      'edit_title'=>'تعديل الطالب',

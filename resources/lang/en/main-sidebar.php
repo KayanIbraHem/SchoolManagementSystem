@@ -18,6 +18,7 @@ return [
     'graduated_list'=>'Graduated List',
     'teachers'=>'Teachers',
     'parents'=>'Parents',
+    'fees'=>'Fees List',
     'accounts'=>'Accounts',
     'attendance'=>'Attendance',
     'exams'=>'Exams',
