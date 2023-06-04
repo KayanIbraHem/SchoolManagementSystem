@@ -62,7 +62,6 @@ Route::group([
 
              //Graduated
              Route::resource('graduated',GraduatedController::class);
-             Route::resource('graduated',GraduatedController::class);
              //End Graduated
 
              //Fees
