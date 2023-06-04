@@ -1,15 +1,17 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Grades\GradeController;
-use App\Http\Controllers\Classgrade\ClassgradeController;
-use App\Http\Controllers\Sections\SectionController;
-use App\Http\Controllers\Teachers\TeacherController;
-use App\Http\Controllers\Students\StudentController;
-use App\Http\Controllers\Students\Promotions\PromotionController;
-use App\Http\Controllers\Students\Graduated\GraduatedController;
-use App\Http\Controllers\Students\FeeInvoices\FeeInvoicesController;
 use App\Http\Controllers\Fees\FeesController;
+use App\Http\Controllers\Grades\GradeController;
+use App\Http\Controllers\Sections\SectionController;
+use App\Http\Controllers\Students\StudentController;
+use App\Http\Controllers\Teachers\TeacherController;
+use App\Http\Controllers\Classgrade\ClassgradeController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Students\Graduated\GraduatedController;
+use App\Http\Controllers\Students\Promotions\PromotionController;
+use App\Http\Controllers\Students\FeeInvoices\FeeInvoicesController;
 
 Auth::routes();
 
@@ -60,6 +62,7 @@ Route::group([
 
              //Graduated
              Route::resource('graduated',GraduatedController::class);
+             Route::resource('graduated',GraduatedController::class);
              //End Graduated
 
              //Fees
@@ -68,7 +71,7 @@ Route::group([
 
              //FeeInvoices
              Route::resource('feeinvoices',FeeInvoicesController::class);
-             //End FeeInvoices
+             //End FeeInvoices//
         });
 
 

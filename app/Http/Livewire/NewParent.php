@@ -6,10 +6,11 @@ use App\Models\Blood;
 use Livewire\Component;
 use App\Models\Religion;
 use App\Models\Nationality;
-use Livewire\WithFileUploads;
 use App\Models\StudentParent;
+use Livewire\WithFileUploads;
 use App\Models\ParentAttachment;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class NewParent extends Component
 {
@@ -227,7 +228,7 @@ class NewParent extends Component
     {
         ParentAttachment::where('parent_id',$id)->delete();
         $studentParent=StudentParent::find($id);
-        \Storage::disk('parent_attachments')->deleteDirectory($studentParent->father_nationaid);
+        Storage::disk('parent_attachments')->deleteDirectory($studentParent->father_nationaid);
         $studentParent->delete();
         return redirect()->to('newparent');
     }
